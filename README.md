@@ -1,4 +1,4 @@
-# Uptime Kuma
+# Network Monitoring
 Simple web-based realtime IP monitoring using BASH script
 
 ## 🔍 Purpose
@@ -18,7 +18,7 @@ Simple web-based realtime IP monitoring using BASH script
 * uptime.json       → Total checks vs online checks for uptime calculation.
 * ip_order.json     → Keeps consistent ordering of IPs.
 
-[!IMPORTANT]
+## IMPORTANT
 
 Since the script "ping_check.sh" reads and writes JSON files, the file permissions need to allow:
 * ping_check.sh must be executable (chmod 755)
