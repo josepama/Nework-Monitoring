@@ -7,22 +7,23 @@ Simple web-based realtime IP monitoring using BASH script
   * Online/offline status
   * Latency (ping response time)
   * Last seen online timestamp
-  * Uptime percentage (online checks ÷ total checks)
+  * Uptime percentage (online checks/total checks)
 - It saves all this data into JSON files so the monitoring history persists across runs.
 
 ## 📂 Files Used
+```
+ip_data.json      → Contains list of IPs + descriptions.
+status.json       → Current run’s results (IP, status, latency, uptime, etc.).
+last_online.json  → Last time each IP was online.
+uptime.json       → Total checks vs online checks for uptime calculation.
+ip_order.json     → Keeps consistent ordering of IPs.
+```
 
-* ip_data.json      → Contains list of IPs + descriptions.
-* status.json       → Current run’s results (IP, status, latency, uptime, etc.).
-* last_online.json  → Last time each IP was online.
-* uptime.json       → Total checks vs online checks for uptime calculation.
-* ip_order.json     → Keeps consistent ordering of IPs.
-
-## $\textcolor{red}{\text{IMPORTANT}}$
-Since the script "ping_check.sh" reads and writes JSON files, the file permissions need to allow:
+## Important
+Since the script `ping_check.sh` reads and writes JSON files, the file permissions need to allow:
 * ping_check.sh must be executable (chmod 755)
-* Read (r) access so the script can load existing data.
-* Write (w) access so the script can update/save results.
+* Read `(r)` access so the script can load existing data.
+* Write `(w)` access so the script can update/save results.
 
 ## Directory tree
 ```
@@ -39,9 +40,8 @@ network-monitoring/
 - Platform
   - ✅ Major Linux distros such as Debian, Ubuntu, CentOS, Fedora and ArchLinux etc.
 - Web Server
-  - [apache](https://httpd.apache.org/) or 
-  - [nginx](https://nginx.org/)
-- [bash](https://www.gnu.org/software/bash/) GNU bash, version 4.2 or higher
+  - [apache](https://httpd.apache.org/) or [nginx](https://nginx.org/)
+  - [bash](https://www.gnu.org/software/bash/) GNU bash, version 4.2 or higher
 
 ## 🔧 How to Install
 - 
