@@ -27,7 +27,7 @@ Since the script `ping_check.sh` reads and writes JSON files, the file permissio
 
 ## Directory tree
 ```
-Network Monitoring/
+Nework-Monitoring/
 ├── ping_check.sh        # Your main Bash script (chmod 755)
 ├── ip_data.json         # List of IPs + descriptions (chmod 644)
 ├── status.json          # Latest run results (chmod 644)
@@ -45,7 +45,10 @@ Network Monitoring/
 - Basic Understanding of cron in Linux
 
 ## 🔧 How to Install
+- Must have root privileges
 - Clone the directory to `/var/www/html/`
+- Make `ping_check.sh` executable `chmod +x ping_check.sh`
+- Set read & write permissions to other files `ip_data.json, status.json, last_online.json, uptime.json, ip_order.json`
 - Modify `ip_data.json` add IP Addresses you want to Monitor
   - example:
   ```
@@ -71,9 +74,9 @@ Network Monitoring/
 
 **Last step is very important**
 
-- you must have root privileges to add cron entry
-- add this to your cron jobs `*/1 * * * * cd /var/www/html/Network Monitoring/ && bash ping_check.sh`
-  - Every minute, cron will go to `/var/www/html/Network Monitoring/` and run the script `ping_check.sh`
+- `crontab -e`
+- add this to your cron jobs `*/1 * * * * cd /var/www/html/Nework-Monitoring/ && bash ping_check.sh`
+  - Every minute, cron will go to `/var/www/html/Nework-Monitoring/` and run the script `ping_check.sh`
 
 ## 🖼 Screenshots
 
