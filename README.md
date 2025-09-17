@@ -18,7 +18,7 @@ Simple web-based realtime IP monitoring using BASH script
 * uptime.json       → Total checks vs online checks for uptime calculation.
 * ip_order.json     → Keeps consistent ordering of IPs.
 
-## IMPORTANT
+[! IMPORTANT]
 
 Since the script "ping_check.sh" reads and writes JSON files, the file permissions need to allow:
 * ping_check.sh must be executable (chmod 755)
@@ -26,7 +26,7 @@ Since the script "ping_check.sh" reads and writes JSON files, the file permissio
 * Write (w) access so the script can update/save results.
 
 ## Directory tree
-
+```
 network-monitoring/
 ├── ping_check.sh        # Your main Bash script (chmod 755)
 ├── ip_data.json         # List of IPs + descriptions (chmod 644)
@@ -34,6 +34,7 @@ network-monitoring/
 ├── last_online.json     # Last time each IP was online (chmod 644)
 ├── uptime.json          # Total/online checks for uptime % (chmod 644)
 └── ip_order.json        # Keeps consistent order of IPs (chmod 644)
+```
 
 ## Requirements:
 - Platform
