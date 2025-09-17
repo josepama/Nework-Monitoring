@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  background-color: #f5f5f7;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h2 {  
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin-bottom: -5px;
+}
+
+.card-description {
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+code {
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.last-checked,
+.latency,
+.uptime,
+.ip {
+  text-transform: uppercase;
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.description {
+  margin-top: -20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ip-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto 1rem auto;
+}
+
+.ip-entry {
+  border: 1px solid gray;
+  padding: 0.75rem;
+  border-radius: 4px;
+  background-color: #ebebea;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 0.9rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+              rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  transition: 0.2s;
+}
+
+.ip-entry:hover {
+  background-color: #cac7ce;
+}
+
+.ip-entry.online {
+  border-left: 8px solid green;
+}
+
+.ip-entry.offline {
+  border-left: 8px solid red;
+  border-right: 1px solid red;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+span.online {
+  color: green;
+  font-weight: 700;
+}
+
+span.offline {
+  color: red;
+  font-weight: 700;
+}
+
+/* MEDIA QUERIES FOR EXTRA RESPONSIVENESS */
+@media (max-width: 768px) {
+  .description {
+    font-size: 13px;
+    margin-top: -15px;
+  }
+
+  .card-description {
+    font-size: 15px;
+  }
+
+  code,
+  .last-checked,
+  .latency,
+  .uptime,
+  .ip {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 12px;
+  }
+
+  h2 {
+    font-size: 17px;
+    margin-bottom: -10px;
+  }
+
+  .ip-entry {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .description {
+    font-size: 8px;
+    font-weight: 700;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+}
+

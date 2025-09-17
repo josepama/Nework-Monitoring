@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/npm/twemoji@11.3.0/2/svg/2638.svg">
+    <title>Network Monitoring</title>
+  </head>
+
+  <body>
+    <div class="title">
+      <h1>Network Monitoring</h1>
+      <p class="description">The results are shown below and automatically refresh every  minute.</p>
+    </div>
+
+    <h2>NETWORKS</h2>
+    <div id="ip-status" class="ip-grid">Loading...</div>
+
+    <script>
+      function format12Hour(timeString) {
+        const date = new Date(timeString.replace(' ', 'T'));
+        return date.toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true
+        });
+      }
+
+      async function fetchStatus() {
+        try {
+          const response = await fetch('status.json');
+          const data = await response.json();
+          
+          const container = document.getElementById('ip-status');
+          container.innerHTML = '';
+
+          data.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'ip-entry ' + item.status;
+            
+            const checkedAt12 = format12Hour(item.checked_at);
+            const lastOnline12 = item.last_online !== 'Never' ? format12Hour(item.last_online) : 'Never';
+            
+            div.innerHTML = `
+            <strong>${item.description}</strong> is
+            <span class="${item.status}">${item.status.toUpperCase()}</span><br>
+            <span class="ip">IP Address: <code>${item.ip}</code></span><br>
+            <span class="latency">Latency: <strong>${item.latency !== "N/A" ? item.latency + " ms" : "N/A"}</strong></span><br>
+            <span class="uptime">Uptime: <strong>${item.uptime}%</strong></span><br>
+            <span class="last-checked">Last checked: ${checkedAt12}</span><br>
+            ${item.status === 'offline' ? `<span style="color:red; text-transform: uppercase; font-family: 'Google Sans Code', monospace;
+              font-optical-sizing: auto; font-size: 12px; font-weight: 400; padding:0;">Last online: ${lastOnline12}</span>` : ''}
+            `;
+
+            container.appendChild(div);
+          });
+        } catch (err) {
+              document.getElementById('ip-status').innerHTML = 'Error loading status.';
+              console.error('Failed to fetch status.json:', err);
+        }
+      }
+
+      fetchStatus();
+      setInterval(fetchStatus, 30000);
+    </script>
+  </body>
+</html>
+

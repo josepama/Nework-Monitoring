@@ -1,0 +1,38 @@
+[
+{
+  "ip": "8.8.8.8",
+  "description": "Google Public DNS",
+  "status": "online",
+  "checked_at": "2025-09-16 09:14:01",
+  "last_online": "2025-09-16 09:13:01",
+  "uptime": "100.0",
+  "latency": "0.172"
+},
+{
+  "ip": "1.1.1.1",
+  "description": "Cloudflare DNS",
+  "status": "online",
+  "checked_at": "2025-09-16 09:14:01",
+  "last_online": "2025-09-16 09:13:01",
+  "uptime": "100.0",
+  "latency": "0.417"
+},
+{
+  "ip": "9.9.9.9",
+  "description": "Quad9 DNS",
+  "status": "online",
+  "checked_at": "2025-09-16 09:14:01",
+  "last_online": "2025-09-16 09:13:01",
+  "uptime": "100.0",
+  "latency": "0.611"
+},
+{
+  "ip": "208.67.222.222",
+  "description": "Open DNS",
+  "status": "online",
+  "checked_at": "2025-09-16 09:14:01",
+  "last_online": "2025-09-16 09:13:01",
+  "uptime": "99.9",
+  "latency": "0.688"
+}
+]
