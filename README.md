@@ -79,4 +79,4 @@ Nework-Monitoring/
   - Every minute, cron will go to `/var/www/html/Nework-Monitoring/` and run the script `ping_check.sh`
 - Go to your `<web-server-ip/Nework-Monitoring/>` then voila!
 
-## [http://103.178.27.234:9999/parasat-nm/] Example Monitoring from my current company
+## [Example Monitoring from my current company] (http://103.178.27.234:9999/parasat-nm/)
