@@ -48,7 +48,7 @@ Nework-Monitoring/
 - Must have root privileges
 - Clone the directory to `/var/www/html/`
 - Make `ping_check.sh` executable `chmod +x ping_check.sh`
-- Set read & write permissions to other files `ip_data.json, status.json, last_online.json, uptime.json, ip_order.json`
+- Set `read & write` permissions to other files `ip_data.json, status.json, last_online.json, uptime.json, ip_order.json`
 - Modify `ip_data.json` add IP Addresses you want to Monitor
   - example:
   ```
