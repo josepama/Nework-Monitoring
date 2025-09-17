@@ -73,7 +73,7 @@ Network Monitoring/
 
 - you must have root privileges to add cron entry
 - add this to your cron jobs `*/1 * * * * cd /var/www/html/Network Monitoring/ && bash ping_check.sh`
-  - Every minute, cron will go to `/var/www/html/Network Monitoring/1` and run the script `ping_check.sh`
+  - Every minute, cron will go to `/var/www/html/Network Monitoring/` and run the script `ping_check.sh`
 
 ## 🖼 Screenshots
 
