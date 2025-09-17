@@ -77,7 +77,7 @@ Nework-Monitoring/
 - `crontab -e`
 - add this to your cron jobs `*/1 * * * * cd /var/www/html/Nework-Monitoring/ && bash ping_check.sh`
   - Every minute, cron will go to `/var/www/html/Nework-Monitoring/` and run the script `ping_check.sh`
-- Go to your <web-server-ip/Nework-Monitoring/> then voila!
+- Go to your `<web-server-ip/Nework-Monitoring/>` then voila!
 
 ## 🖼 Screenshots
 
